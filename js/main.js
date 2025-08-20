@@ -11,6 +11,9 @@ class RoomRadarApp {
     this.setupScrollEffects();
     this.setupFAQ();
     this.setupMobileMenu();
+    this.setupHeaderEffects();
+    this.setupSmoothScroll();
+    this.loadTallyEmbeds();
     console.log('🚀 RoomRadar Landing Site initialized');
   }
 
@@ -200,6 +203,105 @@ class RoomRadarApp {
         top: offsetTop,
         behavior: 'smooth'
       });
+    }
+  }
+
+  // Interactive Header Background Effects
+  setupHeaderEffects() {
+    const header = document.querySelector('.simple-header');
+    if (!header) {
+      console.log('❌ Header not found');
+      return;
+    }
+    
+    console.log('🎯 Setting up header effects...');
+    
+    // Set initial values
+    header.style.setProperty('--mouse-x', '50%');
+    header.style.setProperty('--mouse-y', '50%');
+    
+    let isMouseInHeader = false;
+    let magneticStrength = 0;
+    
+    header.addEventListener('mouseenter', () => {
+      isMouseInHeader = true;
+      magneticStrength = 1;
+      console.log('🎯 Mouse entered header - magnetic effect active');
+    });
+    
+    header.addEventListener('mousemove', (e) => {
+      if (!isMouseInHeader) return;
+      
+      const rect = header.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      
+      // Magnetic attraction effect
+      const centerX = 50;
+      const centerY = 50;
+      const distanceX = x - centerX;
+      const distanceY = y - centerY;
+      
+      // Calculate magnetic pull (stronger when closer to center)
+      const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+      const magneticPull = Math.max(0, 1 - distance / 50);
+      
+      // Apply magnetic effect
+      const magneticX = x + (distanceX * magneticPull * 0.3);
+      const magneticY = y + (distanceY * magneticPull * 0.3);
+      
+      header.style.setProperty('--mouse-x', `${magneticX}%`);
+      header.style.setProperty('--mouse-y', `${magneticY}%`);
+      
+      // Add magnetic animation class
+      header.classList.add('magnetic-active');
+      
+      console.log(`🎯 Magnetic position: ${magneticX.toFixed(1)}%, ${magneticY.toFixed(1)}% (pull: ${magneticPull.toFixed(2)})`);
+    });
+    
+    header.addEventListener('mouseleave', () => {
+      isMouseInHeader = false;
+      magneticStrength = 0;
+      header.style.setProperty('--mouse-x', '50%');
+      header.style.setProperty('--mouse-y', '50%');
+      header.classList.remove('magnetic-active');
+      console.log('🎯 Mouse left header - returning to auto-float');
+    });
+    
+    console.log('✅ Header effects initialized with magnetic attraction');
+  }
+
+  // Smooth scroll to sections
+  setupSmoothScroll() {
+    const links = document.querySelectorAll('a[href^="#"]');
+    
+    links.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        const targetId = link.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+          const offsetTop = targetElement.offsetTop - 80; // Account for fixed navbar
+          
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  }
+
+  // Load Tally Embeds
+  loadTallyEmbeds() {
+    if (typeof Tally !== 'undefined') {
+      Tally.loadEmbeds();
+      console.log('✅ Tally embeds loaded');
+    } else {
+      console.log('⏳ Tally script not loaded yet, retrying...');
+      setTimeout(() => this.loadTallyEmbeds(), 1000);
     }
   }
 
