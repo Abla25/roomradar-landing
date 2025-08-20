@@ -12,6 +12,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  padding-top: 80px; /* Add padding for fixed navbar */
 }
 
 /* Global Typography */
@@ -560,6 +561,7 @@ p {
   top: 0;
   left: 0;
   right: 0;
+  height: 80px; /* Fixed height */
   z-index: 1000;
   transition: all 0.3s ease;
 }
@@ -973,14 +975,21 @@ p {
 
 /* Fixed container below header to prevent overlap */
 .main-content {
-  margin-top: 80px; /* Height of navbar */
   position: relative;
   z-index: 10;
 }
 
 /* First section needs extra padding to avoid header overlap */
 .section:first-of-type {
-  padding-top: 2rem;
+  padding-top: 4rem;
+  margin-top: 2rem;
+}
+
+/* Ensure proper spacing between sections */
+.section {
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 1;
 }
 
 .section-alt {
