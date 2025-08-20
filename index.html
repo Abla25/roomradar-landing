@@ -330,7 +330,7 @@
 
       // Create main particles (attracted to cursor)
       function createParticles() {
-        for (let i = 0; i < 12; i++) { // Reduced for better performance
+        for (let i = 0; i < 25; i++) {
           const particle = document.createElement('div');
           particle.className = 'particle';
           particle.style.left = Math.random() * 100 + '%';
@@ -353,24 +353,24 @@
         const iconTypes = ['house', 'radar', 'star'];
         const positions = [
           // Top edge
-          ...Array.from({length: 4}, (_, i) => ({
-            x: (i / 3) * header.offsetWidth,
+          ...Array.from({length: 8}, (_, i) => ({
+            x: (i / 7) * header.offsetWidth,
             y: 20 + Math.random() * 40
           })),
           // Bottom edge
-          ...Array.from({length: 4}, (_, i) => ({
-            x: (i / 3) * header.offsetWidth,
+          ...Array.from({length: 8}, (_, i) => ({
+            x: (i / 7) * header.offsetWidth,
             y: header.offsetHeight - 60 + Math.random() * 40
           })),
           // Left edge
-          ...Array.from({length: 2}, (_, i) => ({
+          ...Array.from({length: 4}, (_, i) => ({
             x: 20 + Math.random() * 40,
-            y: 80 + (i / 1) * (header.offsetHeight - 160)
+            y: 80 + (i / 3) * (header.offsetHeight - 160)
           })),
           // Right edge
-          ...Array.from({length: 2}, (_, i) => ({
+          ...Array.from({length: 4}, (_, i) => ({
             x: header.offsetWidth - 60 + Math.random() * 40,
-            y: 80 + (i / 1) * (header.offsetHeight - 160)
+            y: 80 + (i / 3) * (header.offsetHeight - 160)
           }))
         ];
 
