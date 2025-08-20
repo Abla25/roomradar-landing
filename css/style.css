@@ -880,10 +880,12 @@ p {
     flex-direction: column;
     padding: 1rem 2rem 2rem;
     gap: 1rem;
+    z-index: 1000;
   }
   
   .nav-menu.active {
     display: flex;
+    animation: slideDown 0.3s ease-out;
   }
   
   .nav-toggle {
@@ -891,13 +893,27 @@ p {
   }
   
   .nav-link {
-    padding: 0.5rem 0;
+    padding: 0.75rem 0;
     border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+    font-size: 1rem;
+    font-weight: 500;
   }
   
   .nav-cta-button {
     margin-top: 1rem;
     justify-content: center;
+    width: 100%;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 
@@ -1691,6 +1707,53 @@ p {
   margin-top: 0;
 }
 
+/* Badge con pallino verde animato per "Beta • Live Updates" */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(59, 130, 246, 0.1);
+  color: #60a5fa;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  position: relative;
+}
+
+.badge-icon {
+  width: 8px;
+  height: 8px;
+  background: #10B981;
+  border-radius: 50%;
+  animation: livePulse 2s ease-in-out infinite;
+  position: relative;
+}
+
+.badge-icon::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: rgba(16, 185, 129, 0.3);
+  border-radius: 50%;
+  animation: livePulse 2s ease-in-out infinite 0.5s;
+}
+
+@keyframes livePulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+}
+
 .footer-content {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
@@ -1826,6 +1889,69 @@ p {
   transition: all 0.3s ease;
 }
 
+/* Terms of Service Content */
+.terms-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.terms-section {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.terms-section:hover {
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+  transform: translateY(-1px);
+}
+
+.terms-section h2 {
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.terms-section h3 {
+  color: #374151;
+  margin: 2rem 0 1rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.terms-section p {
+  color: #6b7280;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.terms-section ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.terms-section li {
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.terms-section a {
+  color: #3B82F6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.terms-section a:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
 .faq-item:hover {
   box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
 }
@@ -1861,11 +1987,20 @@ p {
 }
 
 .faq-answer-content {
-  padding: 0 2rem 2rem 2rem;
+  padding: 0 2.5rem 2rem 2.5rem;
   color: #6b7280;
   line-height: 1.7;
   font-size: 1rem;
   margin: 0;
+}
+
+.faq-answer-content p {
+  margin-bottom: 1rem;
+  padding-right: 2rem;
+}
+
+.faq-answer-content p:last-child {
+  margin-bottom: 0;
 }
 
 .faq-answer-content p {
@@ -1970,7 +2105,7 @@ p {
     display: none;
   }
 
-  .mobile-menu-toggle {
+  .nav-toggle {
     display: block;
   }
 
@@ -2011,7 +2146,45 @@ p {
   }
   
   .faq-answer-content {
-    padding: 0 1.5rem 1.5rem 1.5rem;
+    padding: 0 2rem 2rem 2rem;
+  }
+  
+  /* Migliora allineamento testi e icone su mobile */
+  .feature-icon, .card-icon, .step-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+  }
+  
+  .feature-icon svg, .card-icon svg, .step-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  
+  .btn svg {
+    flex-shrink: 0;
+  }
+  
+  /* Migliora spaziatura liste su mobile */
+  .list-icon {
+    flex-shrink: 0;
+    margin-right: 0.5rem;
+  }
+  
+  /* Migliora allineamento badge nel footer */
+  .badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
   }
 }
 

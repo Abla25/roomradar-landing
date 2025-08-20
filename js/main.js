@@ -159,20 +159,13 @@ class RoomRadarApp {
 
   // Setup mobile menu functionality
   setupMobileMenu() {
-    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuToggle = document.getElementById('nav-toggle');
+    const mobileMenu = document.getElementById('nav-menu');
     
     if (mobileMenuToggle && mobileMenu) {
       mobileMenuToggle.addEventListener('click', () => {
         mobileMenu.classList.toggle('active');
-        
-        // Animate hamburger icon
-        const icon = mobileMenuToggle.querySelector('svg');
-        if (mobileMenu.classList.contains('active')) {
-          icon.style.transform = 'rotate(90deg)';
-        } else {
-          icon.style.transform = 'rotate(0deg)';
-        }
+        mobileMenuToggle.classList.toggle('active');
       });
 
       // Close mobile menu when clicking on links
@@ -180,7 +173,7 @@ class RoomRadarApp {
       mobileNavLinks.forEach(link => {
         link.addEventListener('click', () => {
           mobileMenu.classList.remove('active');
-          mobileMenuToggle.querySelector('svg').style.transform = 'rotate(0deg)';
+          mobileMenuToggle.classList.remove('active');
         });
       });
 
@@ -188,7 +181,7 @@ class RoomRadarApp {
       document.addEventListener('click', (e) => {
         if (!mobileMenuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
           mobileMenu.classList.remove('active');
-          mobileMenuToggle.querySelector('svg').style.transform = 'rotate(0deg)';
+          mobileMenuToggle.classList.remove('active');
         }
       });
     }
