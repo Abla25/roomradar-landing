@@ -726,125 +726,7 @@ p {
   }
 }
 
-/* Interactive cursor particles */
-.hero-particles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  z-index: 0;
-  will-change: transform;
-}
-
-.particle {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.8) 0%, rgba(59, 130, 246, 0.3) 50%, transparent 100%);
-  border-radius: 50%;
-  pointer-events: none;
-  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  opacity: 0.4;
-  transform: scale(1);
-}
-
-.particle.active {
-  opacity: 1;
-  transform: scale(1.5);
-  box-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
-}
-
-.icon-particle {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  pointer-events: none;
-  opacity: 0;
-  transform: scale(0) rotate(0deg);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  color: #3B82F6;
-  filter: drop-shadow(0 2px 4px rgba(59, 130, 246, 0.3));
-}
-
-.icon-particle.active {
-  opacity: 1;
-  transform: scale(1) rotate(180deg);
-  animation: iconFloat 2s ease-out forwards;
-}
-
-.icon-particle.house {
-  color: #10B981;
-}
-
-.icon-particle.radar {
-  color: #8B5CF6;
-}
-
-.icon-particle.star {
-  color: #F59E0B;
-}
-
-@keyframes iconFloat {
-  0% {
-    transform: scale(1) rotate(180deg) translateY(0px);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(0.3) rotate(360deg) translateY(-40px);
-    opacity: 0;
-  }
-}
-
-/* Ambient floating icons */
-.ambient-icon {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  pointer-events: none;
-  opacity: 0.5;
-  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
-  transform: scale(1) rotate(0deg);
-}
-
-.ambient-icon.attracted {
-  opacity: 0.9;
-  transform: scale(1.4) rotate(15deg);
-  filter: drop-shadow(0 4px 8px rgba(59, 130, 246, 0.3));
-}
-
-/* Magnetic field effect */
-.magnetic-field {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, rgba(16, 185, 129, 0.05) 50%, transparent 100%);
-  pointer-events: none;
-  opacity: 0;
-  transition: all 0.3s ease;
-  transform: scale(0.8);
-  z-index: 0;
-}
-
-.magnetic-field.active {
-  opacity: 1;
-  transform: scale(1.2);
-  animation: magneticPulse 2s ease-in-out infinite;
-}
-
-@keyframes magneticPulse {
-  0%, 100% { 
-    transform: scale(1.2);
-    opacity: 0.3;
-  }
-  50% { 
-    transform: scale(1.5);
-    opacity: 0.1;
-  }
-}
+/* Removed all particle effects for better performance */
 
 .hero-content {
   position: relative;
@@ -973,23 +855,14 @@ p {
   margin-bottom: 2rem;
 }
 
-/* Fixed container below header to prevent overlap */
-.main-content {
-  position: relative;
-  z-index: 10;
-}
-
-/* First section needs extra padding to avoid header overlap */
-.section:first-of-type {
-  padding-top: 4rem;
-  margin-top: 2rem;
-}
-
-/* Ensure proper spacing between sections */
+/* Clean section spacing */
 .section {
-  margin-bottom: 4rem;
-  position: relative;
-  z-index: 1;
+  padding: 6rem 0;
+  margin-bottom: 2rem;
+}
+
+.section:first-of-type {
+  padding-top: 8rem;
 }
 
 .section-alt {
