@@ -819,6 +819,7 @@ p {
   bottom: 0;
   pointer-events: none;
   z-index: 0;
+  will-change: transform;
 }
 
 .particle {
@@ -1056,9 +1057,16 @@ p {
   margin-bottom: 2rem;
 }
 
+/* Fixed container below header to prevent overlap */
+.main-content {
+  margin-top: 80px; /* Height of navbar */
+  position: relative;
+  z-index: 10;
+}
+
 /* First section needs extra padding to avoid header overlap */
 .section:first-of-type {
-  padding-top: 8rem;
+  padding-top: 2rem;
 }
 
 .section-alt {
