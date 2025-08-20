@@ -303,13 +303,13 @@
   <!-- Interactive Header Magic ✨ -->
   <script>
     (function() {
-      const hero = document.querySelector('.hero');
+      const header = document.querySelector('.hero');
       const particlesContainer = document.querySelector('.hero-particles');
       const magneticField = document.querySelector('.magnetic-field');
       let particles = [];
       let mouseX = 0;
       let mouseY = 0;
-      let isMouseInHero = false;
+      let isMouseInHeader = false;
 
       // Icon templates
       const iconTemplates = {
@@ -338,10 +338,10 @@
           
           particles.push({
             element: particle,
-            baseX: Math.random() * hero.offsetWidth,
-            baseY: Math.random() * hero.offsetHeight,
-            currentX: Math.random() * hero.offsetWidth,
-            currentY: Math.random() * hero.offsetHeight,
+            baseX: Math.random() * header.offsetWidth,
+            baseY: Math.random() * header.offsetHeight,
+            currentX: Math.random() * header.offsetWidth,
+            currentY: Math.random() * header.offsetHeight,
             speed: 0.02 + Math.random() * 0.03
           });
         }
@@ -353,23 +353,23 @@
         const positions = [
           // Top edge
           ...Array.from({length: 8}, (_, i) => ({
-            x: (i / 7) * hero.offsetWidth,
+            x: (i / 7) * header.offsetWidth,
             y: 20 + Math.random() * 40
           })),
           // Bottom edge
           ...Array.from({length: 8}, (_, i) => ({
-            x: (i / 7) * hero.offsetWidth,
-            y: hero.offsetHeight - 60 + Math.random() * 40
+            x: (i / 7) * header.offsetWidth,
+            y: header.offsetHeight - 60 + Math.random() * 40
           })),
           // Left edge
           ...Array.from({length: 4}, (_, i) => ({
             x: 20 + Math.random() * 40,
-            y: 80 + (i / 3) * (hero.offsetHeight - 160)
+            y: 80 + (i / 3) * (header.offsetHeight - 160)
           })),
           // Right edge
           ...Array.from({length: 4}, (_, i) => ({
-            x: hero.offsetWidth - 60 + Math.random() * 40,
-            y: 80 + (i / 3) * (hero.offsetHeight - 160)
+            x: header.offsetWidth - 60 + Math.random() * 40,
+            y: 80 + (i / 3) * (header.offsetHeight - 160)
           }))
         ];
 
@@ -422,7 +422,7 @@
           // Add unique phase offset for each particle
           const phaseOffset = index * 0.5;
           
-          if (isMouseInHero) {
+          if (isMouseInHeader) {
             // Magnetic attraction to cursor
             const dx = mouseX - particle.currentX;
             const dy = mouseY - particle.currentY;
@@ -483,14 +483,14 @@
             // Smooth boundary wrapping
             const margin = 50;
             if (particle.currentX < -margin) {
-              particle.baseX = hero.offsetWidth + margin;
-            } else if (particle.currentX > hero.offsetWidth + margin) {
+              particle.baseX = header.offsetWidth + margin;
+            } else if (particle.currentX > header.offsetWidth + margin) {
               particle.baseX = -margin;
             }
             
             if (particle.currentY < -margin) {
-              particle.baseY = hero.offsetHeight + margin;
-            } else if (particle.currentY > hero.offsetHeight + margin) {
+              particle.baseY = header.offsetHeight + margin;
+            } else if (particle.currentY > header.offsetHeight + margin) {
               particle.baseY = -margin;
             }
           }
@@ -511,18 +511,18 @@
       }
 
       // Mouse events
-      hero.addEventListener('mouseenter', () => {
-        isMouseInHero = true;
+      header.addEventListener('mouseenter', () => {
+        isMouseInHeader = true;
         magneticField.classList.add('active');
       });
 
-      hero.addEventListener('mouseleave', () => {
-        isMouseInHero = false;
+      header.addEventListener('mouseleave', () => {
+        isMouseInHeader = false;
         magneticField.classList.remove('active');
       });
 
-      hero.addEventListener('mousemove', (e) => {
-        const rect = hero.getBoundingClientRect();
+      header.addEventListener('mousemove', (e) => {
+        const rect = header.getBoundingClientRect();
         mouseX = e.clientX - rect.left;
         mouseY = e.clientY - rect.top;
         
@@ -537,8 +537,8 @@
       });
 
       // Click effect
-      hero.addEventListener('click', (e) => {
-        const rect = hero.getBoundingClientRect();
+      header.addEventListener('click', (e) => {
+        const rect = header.getBoundingClientRect();
         const clickX = e.clientX - rect.left;
         const clickY = e.clientY - rect.top;
         
