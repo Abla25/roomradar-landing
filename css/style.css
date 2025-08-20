@@ -738,10 +738,8 @@ p {
 /* Hero Section */
 .hero {
   padding: 8rem 0 6rem 0;
-  position: relative;
-  overflow: hidden;
+  position: static;
   margin-bottom: 4rem;
-  z-index: 1;
 }
 
 .hero::before {
@@ -796,8 +794,7 @@ p {
   right: 0;
   bottom: 0;
   pointer-events: none;
-  overflow: hidden;
-  z-index: 1;
+  z-index: 0;
 }
 
 .particle {
@@ -1033,8 +1030,6 @@ p {
 .section {
   padding: 6rem 0;
   margin-bottom: 2rem;
-  position: relative;
-  z-index: 2;
 }
 
 .section-alt {
