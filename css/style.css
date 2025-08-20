@@ -792,18 +792,56 @@ p {
 .simple-header {
   background: #ffffff;
   border-bottom: 1px solid #e5e7eb;
-  padding: 2rem 0;
+  padding: 4rem 0;
   margin-bottom: 2rem;
   text-align: center;
-  padding-top: 5rem; /* Compensate for fixed navbar */
+  padding-top: 7rem; /* Compensate for fixed navbar + extra space */
 }
 
 .simple-header h1 {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-weight: 700;
   color: #0f172a;
-  margin: 0;
+  margin: 0 0 1rem 0;
   letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.simple-header .subheadline {
+  font-size: 1.25rem;
+  color: #64748b;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.simple-header .cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #3B82F6, #1d4ed8);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+.simple-header .cta-button:hover {
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
+}
+
+.simple-header .cta-button:active {
+  transform: translateY(0);
 }
 
 
@@ -1110,9 +1148,29 @@ p {
   .container {
     padding: 0 1rem;
   }
-
+  
   h1 {
     font-size: 2.5rem;
+  }
+  
+  .simple-header {
+    padding: 3rem 0;
+    padding-top: 6rem;
+  }
+  
+  .simple-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .simple-header .subheadline {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .simple-header .cta-button {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
   }
 
   h2 {
