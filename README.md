@@ -16,6 +16,7 @@ roomradar-landing/
 ├── thank-you.html          # Post-signup confirmation page
 ├── faq.html                # FAQ with interactive accordion
 ├── community.html          # Community links and guidelines
+├── privacy.html            # Privacy policy (GDPR compliant)
 ├── partials/
 │   ├── navbar.html         # Reusable navigation component
 │   └── footer.html         # Reusable footer component
@@ -106,6 +107,12 @@ roomradar-landing/
 - **Multiple Channels**: Telegram group, direct feedback
 - **Guidelines**: Community rules and expectations
 - **Stats**: Community growth metrics
+
+### 7. Privacy Policy (`privacy.html`)
+- **GDPR Compliance**: Complete privacy policy
+- **Data Collection**: What data we collect and why
+- **User Rights**: Clear explanation of GDPR rights
+- **Contact Information**: Privacy team contact details
 
 ## 🔧 Setup & Development
 

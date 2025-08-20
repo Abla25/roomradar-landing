@@ -18,7 +18,7 @@ class RoomRadarApp {
   async loadComponents() {
     try {
       // Load navbar
-      const navbarResponse = await fetch('/partials/navbar.html');
+      const navbarResponse = await fetch('./partials/navbar.html');
       const navbarHtml = await navbarResponse.text();
       const navbarContainer = document.getElementById('navbar-container');
       if (navbarContainer) {
@@ -26,7 +26,7 @@ class RoomRadarApp {
       }
 
       // Load footer
-      const footerResponse = await fetch('/partials/footer.html');
+      const footerResponse = await fetch('./partials/footer.html');
       const footerHtml = await footerResponse.text();
       const footerContainer = document.getElementById('footer-container');
       if (footerContainer) {

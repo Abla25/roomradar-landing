@@ -429,7 +429,7 @@ p {
 
 .footer-content {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 3rem;
   margin-bottom: 3rem;
 }
@@ -467,6 +467,10 @@ p {
 
 .footer-links a:hover {
   color: #3B82F6;
+}
+
+.footer-bottom a:hover {
+  color: #3B82F6 !important;
 }
 
 .footer-bottom {
@@ -674,6 +678,12 @@ p {
   .footer-content {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+  
+  .footer-bottom > div {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 1rem;
   }
 
   .card {
