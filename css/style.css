@@ -271,49 +271,25 @@ p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 64px;
-  height: 64px;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(16, 185, 129, 0.1));
-  border-radius: 16px;
+  width: 56px;
+  height: 56px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
   margin-bottom: 1.5rem;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow: hidden;
-}
-
-.card-icon::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(16, 185, 129, 0.2));
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  border-radius: 16px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #374151;
 }
 
 .card-icon:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 
-    0 20px 40px rgba(59, 130, 246, 0.2),
-    0 8px 16px rgba(16, 185, 129, 0.15);
-}
-
-.card-icon:hover::before {
-  opacity: 1;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+  border-color: #d1d5db;
 }
 
 .card-icon svg {
-  position: relative;
-  z-index: 2;
-  transition: all 0.3s ease;
-  color: #3B82F6;
-}
-
-.card-icon:hover svg {
-  transform: scale(1.1) rotate(5deg);
-  filter: drop-shadow(0 4px 8px rgba(59, 130, 246, 0.4));
+  transition: all 0.2s ease;
 }
 
 /* Step Icon Animations */
@@ -398,48 +374,21 @@ p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(16, 185, 129, 0.1));
-  border-radius: 12px;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow: hidden;
-}
-
-.feature-icon::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(16, 185, 129, 0.2));
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  border-radius: 12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .feature-icon:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 
-    0 15px 30px rgba(59, 130, 246, 0.2),
-    0 6px 12px rgba(16, 185, 129, 0.15);
-}
-
-.feature-icon:hover::before {
-  opacity: 1;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background: #ffffff !important;
+  border-color: #d1d5db !important;
 }
 
 .feature-icon svg {
-  position: relative;
-  z-index: 2;
-  transition: all 0.3s ease;
-  color: #3B82F6;
-}
-
-.feature-icon:hover svg {
-  transform: scale(1.1) rotate(5deg);
-  filter: drop-shadow(0 4px 8px rgba(59, 130, 246, 0.4));
+  transition: all 0.2s ease;
 }
 
 /* Sparkle Animation for Special Icons */
@@ -792,6 +741,7 @@ p {
   position: relative;
   overflow: hidden;
   margin-bottom: 4rem;
+  z-index: 1;
 }
 
 .hero::before {
@@ -1083,6 +1033,8 @@ p {
 .section {
   padding: 6rem 0;
   margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
 }
 
 .section-alt {
