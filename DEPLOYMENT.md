@@ -110,9 +110,9 @@ python3 -m http.server 8080
 ### Update Email Addresses
 Before going live, update these placeholder emails:
 - `hello@roomradar.app` → Your contact email
-- `privacy@roomradar.app` → Your privacy team email
-- `feedback@roomradar.app` → Your feedback email
-- `support@roomradar.app` → Your support email
+- `hello@roomradar.app` → Your privacy team email
+- `hello@roomradar.app` → Your feedback email
+- `hello@roomradar.app` → Your support email
 
 ### Tally Form
 - Form URL: `https://tally.so/embed/nr4Y55`

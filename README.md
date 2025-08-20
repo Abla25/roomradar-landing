@@ -223,7 +223,7 @@ php -S localhost:8000
 ## 📞 Support
 
 For questions about this landing site:
-- **Email**: dev@roomradar.app
+- **Email**: hello@roomradar.app
 - **Documentation**: This README
 - **Issues**: GitHub Issues (if applicable)
 
