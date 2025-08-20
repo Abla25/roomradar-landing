@@ -795,6 +795,7 @@ p {
   padding: 2rem 0;
   margin-bottom: 2rem;
   text-align: center;
+  padding-top: 5rem; /* Compensate for fixed navbar */
 }
 
 .simple-header h1 {
