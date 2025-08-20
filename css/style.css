@@ -12,7 +12,6 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  padding-top: 80px; /* Add padding for fixed navbar */
 }
 
 /* Global Typography */
@@ -546,20 +545,7 @@ p {
   color: #3B82F6;
 }
 
-/* Navigation */
-.navbar {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 80px;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-}
+/* Navigation - Removed for simple header structure */
 
 .navbar.scrolled {
   box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
@@ -670,18 +656,94 @@ p {
   border-bottom: 1px solid rgba(15, 23, 42, 0.06);
 }
 
-/* Hero Section - Completely Redesigned */
-.hero {
-  padding: 120px 0 80px 0;
+/* Header Styles (copiato da esempio.html) */
+header {
   background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  padding: 3rem 0 4rem 0;
+  margin-bottom: 2rem;
   position: relative;
-  margin-bottom: 0;
+  overflow: hidden;
 }
 
-.hero-content {
-  text-align: center;
+.header-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  text-align: center;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.header-logo:hover {
+  transform: translateY(-2px);
+}
+
+.header-logo-icon {
+  width: 60px;
+  height: 60px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.header-subtitle {
+  font-size: 1rem;
+  color: #64748b;
+  font-weight: 400;
+  margin-top: 0.25rem;
+  position: relative;
+}
+
+.header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(59, 130, 246, 0.1);
+  color: #3B82F6;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-top: 1.5rem;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  animation: fadeIn 1s ease-out 0.5s both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.header-badge-icon {
+  width: 8px;
+  height: 8px;
+  background: #10B981;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.2); }
 }
 
 .hero h1 {
