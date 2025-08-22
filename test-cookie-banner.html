@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Cookie Banner - RoomRadar</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/cookie-banner.css">
+  <style>
+    body {
+      padding: 2rem;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .test-section {
+      margin: 2rem 0;
+      padding: 1rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+    }
+    .test-button {
+      background: #3B82F6;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      margin: 0.5rem;
+    }
+    .test-button:hover {
+      background: #2563EB;
+    }
+    .info-box {
+      background: #f3f4f6;
+      padding: 1rem;
+      border-radius: 6px;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cookie Banner Test - RoomRadar</h1>
+  
+  <div class="test-section">
+    <h2>Test Functionality</h2>
+    <p>This page is for testing the GDPR-compliant cookie banner.</p>
+    
+    <div class="info-box">
+      <h3>How to test:</h3>
+      <ol>
+        <li>Open this page in a new window/incognito</li>
+        <li>The banner should appear automatically</li>
+        <li>Test the different buttons (Accept All, Reject All, Customize)</li>
+        <li>Reload the page to verify the banner doesn't reappear</li>
+        <li>Use the buttons below to test functions</li>
+      </ol>
+    </div>
+    
+    <button class="test-button" onclick="clearConsent()">Clear Consent (Show Banner)</button>
+    <button class="test-button" onclick="showBanner()">Show Banner</button>
+    <button class="test-button" onclick="showModal()">Show Preferences Modal</button>
+    <button class="test-button" onclick="checkConsent()">Check Current Consent</button>
+    <button class="test-button" onclick="testExpiry()">Test Expiry (Simulate 31 days)</button>
+  </div>
+  
+  <div class="test-section">
+    <h2>Consent Information</h2>
+    <div id="consent-info">
+      <p>Loading consent information...</p>
+    </div>
+  </div>
+  
+  <div class="test-section">
+    <h2>Answers to Questions</h2>
+    
+    <h3>1. How long are preferences maintained?</h3>
+    <p><strong>Answer:</strong> Preferences are saved in localStorage and persist for <strong>30 days</strong> (GDPR compliance) until:</p>
+    <ul>
+      <li>They automatically expire after 30 days</li>
+      <li>The user manually clears browser data</li>
+      <li>The banner version is updated (currently 1.0)</li>
+      <li>The user uses the "Clear Consent" button</li>
+    </ul>
+    
+    <h3>2. Can preferences be modified?</h3>
+    <p><strong>Answer:</strong> <strong>Yes</strong>, in several ways:</p>
+    <ul>
+      <li>"Customize" button in the main banner</li>
+      <li>"Update Cookie Preferences" button in the cookie policy page</li>
+      <li>JavaScript API: <code>RoomRadarCookies.updateConsent()</code></li>
+      <li>"Show Preferences Modal" button on this test page</li>
+    </ul>
+    
+    <h3>3. Is it in line with the site's style?</h3>
+    <p><strong>Answer:</strong> <strong>Yes</strong>, completely integrated:</p>
+    <ul>
+      <li>Uses RoomRadar colors (#3B82F6 blue, #10B981 green)</li>
+      <li>Responsive and modern design</li>
+      <li>Smooth and consistent animations</li>
+      <li>Complete accessibility (WCAG compliant)</li>
+    </ul>
+    
+    <h3>4. Doesn't reappear on other pages?</h3>
+    <p><strong>Answer:</strong> <strong>Correct</strong>, the banner:</p>
+    <ul>
+      <li>Checks localStorage on every page load</li>
+      <li>Doesn't appear if consent has already been given</li>
+      <li>Works on all site pages</li>
+      <li>Is integrated in: index.html, how-it-works.html, faq.html, community.html, beta-signup.html, cookie-policy.html</li>
+    </ul>
+    
+    <h3>5. How does it identify the same user?</h3>
+    <p><strong>Answer:</strong> The banner identifies the user through:</p>
+    <ul>
+      <li><strong>Browser localStorage:</strong> Data persists even after browser closure</li>
+      <li><strong>Specific domain:</strong> Data is saved for roomradar.app</li>
+      <li><strong>Unique key:</strong> 'roomradar-cookie-consent' identifies the consent</li>
+      <li><strong>Timestamp:</strong> Checks when consent was given</li>
+      <li><strong>Version:</strong> Verifies compatibility with updates</li>
+    </ul>
+    <p><em>Note: If the user changes browser, device, or clears data, the banner will reappear.</em></p>
+  </div>
+
+  <script src="./js/main.js"></script>
+  <script src="./js/cookie-banner.js"></script>
+  
+  <script>
+    // Funzioni di test
+    function clearConsent() {
+      localStorage.removeItem('roomradar-cookie-consent');
+      location.reload();
+    }
+    
+    function showBanner() {
+      if (window.RoomRadarCookies) {
+        window.RoomRadarCookies.showBanner();
+      }
+    }
+    
+    function showModal() {
+      if (window.roomradarCookieBanner) {
+        window.roomradarCookieBanner.showModal();
+      }
+    }
+    
+    function checkConsent() {
+      const consent = window.RoomRadarCookies.getConsentObject();
+      const infoDiv = document.getElementById('consent-info');
+      
+      if (consent) {
+        const consentDate = new Date(consent.timestamp);
+        const expiryDate = new Date(consentDate.getTime() + (30 * 24 * 60 * 60 * 1000));
+        const now = new Date();
+        const isValid = now < expiryDate;
+        
+        infoDiv.innerHTML = `
+          <h3>Current Consent:</h3>
+          <ul>
+            <li><strong>Essential:</strong> ${consent.essential ? '✅' : '❌'}</li>
+            <li><strong>Analytics:</strong> ${consent.analytics ? '✅' : '❌'}</li>
+            <li><strong>Marketing:</strong> ${consent.marketing ? '✅' : '❌'}</li>
+            <li><strong>Preferences:</strong> ${consent.preferences ? '✅' : '❌'}</li>
+            <li><strong>Version:</strong> ${consent.version}</li>
+            <li><strong>Consent Date:</strong> ${consentDate.toLocaleString()}</li>
+            <li><strong>Expiry:</strong> ${expiryDate.toLocaleString()}</li>
+            <li><strong>Valid:</strong> ${isValid ? '✅' : '❌'}</li>
+          </ul>
+        `;
+      } else {
+        infoDiv.innerHTML = '<p>No consent saved</p>';
+      }
+    }
+    
+    function testExpiry() {
+      // Simulate consent from 31 days ago (expired)
+      const expiredConsent = {
+        essential: true,
+        analytics: true,
+        marketing: false,
+        preferences: true,
+        timestamp: Date.now() - (31 * 24 * 60 * 60 * 1000), // 31 days ago
+        version: '1.0'
+      };
+      
+      localStorage.setItem('roomradar-cookie-consent', JSON.stringify(expiredConsent));
+      location.reload();
+    }
+    
+    // Aggiorna informazioni al caricamento
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(checkConsent, 1000); // Aspetta che il banner si inizializzi
+    });
+    
+    // Ascolta aggiornamenti consenso
+    window.addEventListener('cookieConsentUpdated', function(event) {
+      console.log('Consenso aggiornato:', event.detail);
+      checkConsent();
+    });
+  </script>
+</body>
+</html>

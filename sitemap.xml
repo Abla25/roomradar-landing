@@ -91,4 +91,15 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://roomradar.app/it/thank-you.html"/>
   </url>
   
+  <!-- Cookie Policy -->
+  <url>
+    <loc>https://roomradar.app/cookie-policy.html</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://roomradar.app/cookie-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://roomradar.app/es/cookie-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://roomradar.app/it/cookie-policy.html"/>
+  </url>
+  
 </urlset>
