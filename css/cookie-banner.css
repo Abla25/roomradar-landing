@@ -83,6 +83,34 @@
   flex: 1;
 }
 
+/* Desktop: Link sotto la descrizione */
+.cookie-banner-description-links {
+  display: none; /* Mostrato solo su desktop */
+  margin-top: 0.5rem;
+  font-size: 11px;
+  color: var(--cookie-gray-500);
+}
+
+.cookie-banner-description-links .cookie-banner-link {
+  color: var(--cookie-primary);
+  text-decoration: underline;
+  font-size: 11px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.cookie-banner-description-links .cookie-banner-link:hover {
+  color: var(--cookie-secondary);
+  text-decoration: underline;
+}
+
+.cookie-banner-description-links .cookie-banner-separator {
+  color: var(--cookie-gray-400);
+  margin: 0 0.5rem;
+  font-size: 11px;
+}
+
 .cookie-banner-title {
   font-size: 15px;
   font-weight: 600;
@@ -103,6 +131,17 @@
   align-items: center;
   gap: 0.75rem;
   flex-shrink: 0;
+}
+
+/* Desktop Layout - Accept All prominente a destra */
+.cookie-banner-main-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.cookie-banner-text-links {
+  display: none; /* Nascondi su desktop - verrà mostrato sotto la descrizione */
 }
 
 .cookie-banner-btn {
@@ -344,6 +383,60 @@
   justify-content: flex-end;
 }
 
+/* Desktop Layout */
+@media (min-width: 768px) {
+  .cookie-banner-description-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  /* Allineamento verticale icona con titolo */
+  .cookie-banner-header {
+    align-items: flex-start;
+  }
+  
+  .cookie-banner-icon {
+    margin-top: 0.125rem; /* Allinea con la baseline del titolo */
+  }
+  
+  /* Pulsanti desktop: Accept All sempre a destra */
+  .cookie-banner-main-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  /* Accept All più prominente */
+  .cookie-banner-btn-primary {
+    background: linear-gradient(135deg, var(--cookie-primary), var(--cookie-secondary));
+    color: var(--cookie-white);
+    font-weight: 600;
+    padding: 0.625rem 1.25rem;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+    transform: scale(1.05);
+  }
+  
+  .cookie-banner-btn-primary:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+  }
+  
+  /* Reject All più discreto */
+  .cookie-banner-btn-secondary {
+    background: var(--cookie-gray-100);
+    color: var(--cookie-gray-600);
+    border: 1px solid var(--cookie-gray-300);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+  }
+  
+  .cookie-banner-btn-secondary:hover {
+    background: var(--cookie-gray-200);
+    color: var(--cookie-gray-700);
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 767px) {
   .cookie-banner {
@@ -367,14 +460,73 @@
   
   .cookie-banner-actions {
     width: 100%;
-    justify-content: flex-end;
-    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
   
-  .cookie-banner-btn {
+  .cookie-banner-main-actions {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Accept All leggermente più largo */
+    gap: 0.75rem;
+    width: 100%;
+  }
+  
+  .cookie-banner-btn-primary {
+    grid-column: 2; /* Accept All a destra */
+    font-size: 14px;
+    padding: 0.75rem 1rem;
+    min-height: 44px;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.25);
+  }
+  
+  .cookie-banner-btn-secondary {
+    grid-column: 1; /* Reject All a sinistra */
     font-size: 13px;
-    padding: 0.375rem 0.75rem;
-    min-height: 32px;
+    padding: 0.75rem 1rem;
+    min-height: 44px;
+    font-weight: 500;
+  }
+  
+  .cookie-banner-btn-text {
+    font-size: 10px;
+    padding: 0.125rem 0.25rem;
+    min-height: 20px;
+    font-weight: 400;
+  }
+  
+  .cookie-banner-text-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 10px;
+    color: #6b7280;
+    width: 100%;
+  }
+  
+  .cookie-banner-description-links {
+    display: none; /* Nascondi su mobile */
+  }
+  
+  .cookie-banner-link {
+    color: #3b82f6;
+    text-decoration: underline;
+    font-size: 10px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  
+  .cookie-banner-link:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+  }
+  
+  .cookie-banner-separator {
+    color: #9ca3af;
+    margin: 0 0.5rem;
+    font-size: 10px;
   }
   
   .cookie-banner-title {

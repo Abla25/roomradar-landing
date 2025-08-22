@@ -219,21 +219,27 @@
               <div class="cookie-banner-text">
                 <h3 class="cookie-banner-title">${text.title}</h3>
                 <p class="cookie-banner-description">${text.description}</p>
+                <div class="cookie-banner-description-links">
+                  <a href="#" class="cookie-banner-link" data-action="customize">${text.customize}</a>
+                  <span class="cookie-banner-separator"> - </span>
+                  <a href="${COOKIE_CONFIG.cookiePolicyUrl}" class="cookie-banner-link" target="_blank">${text.learnMore}</a>
+                </div>
               </div>
             </div>
             <div class="cookie-banner-actions">
-              <button class="cookie-banner-btn cookie-banner-btn-primary" data-action="accept-all">
-                ${text.acceptAll}
-              </button>
-              <button class="cookie-banner-btn cookie-banner-btn-secondary" data-action="reject-all">
-                ${text.rejectAll}
-              </button>
-              <button class="cookie-banner-btn cookie-banner-btn-text" data-action="customize">
-                ${text.customize}
-              </button>
-              <a href="${COOKIE_CONFIG.cookiePolicyUrl}" class="cookie-banner-btn cookie-banner-btn-text" target="_blank">
-                ${text.learnMore}
-              </a>
+              <div class="cookie-banner-main-actions">
+                <button class="cookie-banner-btn cookie-banner-btn-secondary" data-action="reject-all">
+                  ${text.rejectAll}
+                </button>
+                <button class="cookie-banner-btn cookie-banner-btn-primary" data-action="accept-all">
+                  ${text.acceptAll}
+                </button>
+              </div>
+              <div class="cookie-banner-text-links">
+                <a href="#" class="cookie-banner-link" data-action="customize">${text.customize}</a>
+                <span class="cookie-banner-separator"> - </span>
+                <a href="${COOKIE_CONFIG.cookiePolicyUrl}" class="cookie-banner-link" target="_blank">${text.learnMore}</a>
+              </div>
             </div>
           </div>
         </div>
