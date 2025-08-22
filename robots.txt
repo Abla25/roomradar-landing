@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://roomradar.app/sitemap.xml
+Sitemap: https://roomradar.app/sitemap-en.xml
+Sitemap: https://roomradar.app/sitemap-es.xml
+Sitemap: https://roomradar.app/sitemap-it.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Disallow admin or private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+Disallow: /_config.yml
+Disallow: /.git/
+
+# Allow important pages
+Allow: /index.html
+Allow: /how-it-works.html
+Allow: /community.html
+Allow: /faq.html
+Allow: /privacy.html
+Allow: /terms.html
+Allow: /beta-signup.html
+Allow: /thank-you.html
