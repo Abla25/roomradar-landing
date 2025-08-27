@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary Meta Tags -->
-  <title>Rooms Barcelona Students | AI-Powered Room Finder | RoomRadar</title>
-  <meta name="description" content="Find reliable student rooms in Barcelona with AI-powered filtering. Skip scams, find quality accommodation fast. Trust ratings, smart search, verified listings.">
-  <meta name="keywords" content="rooms Barcelona students, student accommodation Barcelona, Barcelona room search, reliable room listings Barcelona, AI room finder Barcelona, student housing Barcelona, room rental Barcelona, Facebook groups Barcelona housing">
+  <title>Student Rooms Barcelona & Rome | AI-Powered Room Finder | RoomRadar</title>
+  <meta name="description" content="Find reliable student rooms in Barcelona or Rome with AI-powered filtering. Choose your city, skip scams, find quality accommodation fast. Trust ratings, smart search, verified listings.">
+  <meta name="keywords" content="rooms Barcelona students, rooms Rome students, student accommodation Barcelona, student accommodation Rome, Barcelona room search, Rome room search, reliable room listings, AI room finder, student housing, room rental, Facebook groups housing">
   <meta name="author" content="RoomRadar">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="googlebot" content="index, follow">
@@ -24,8 +24,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://roomradar.app/">
-  <meta property="og:title" content="Rooms Barcelona Students | AI-Powered Room Finder | RoomRadar">
-  <meta property="og:description" content="Find reliable student rooms in Barcelona with AI-powered filtering. Skip scams, find quality accommodation fast.">
+  <meta property="og:title" content="Student Rooms Barcelona & Rome | AI-Powered Room Finder | RoomRadar">
+  <meta property="og:description" content="Find reliable student rooms in Barcelona or Rome with AI-powered filtering. Choose your city, skip scams, find quality accommodation fast.">
   <meta property="og:image" content="https://roomradar.app/assets/logo.svg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -35,16 +35,16 @@
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://roomradar.app/">
-  <meta property="twitter:title" content="Rooms Barcelona Students | AI-Powered Room Finder | RoomRadar">
-  <meta property="twitter:description" content="Find reliable student rooms in Barcelona with AI-powered filtering. Skip scams, find quality accommodation fast.">
+  <meta property="twitter:title" content="Student Rooms Barcelona & Rome | AI-Powered Room Finder | RoomRadar">
+  <meta property="twitter:description" content="Find reliable student rooms in Barcelona or Rome with AI-powered filtering. Choose your city, skip scams, find quality accommodation fast.">
   <meta property="twitter:image" content="https://roomradar.app/assets/logo.svg">
   <meta property="twitter:creator" content="@roomradar">
   
   <!-- Additional SEO Meta Tags -->
-  <meta name="geo.region" content="ES-CT">
-  <meta name="geo.placename" content="Barcelona">
-  <meta name="geo.position" content="41.3851;2.1734">
-  <meta name="ICBM" content="41.3851, 2.1734">
+  <meta name="geo.region" content="ES-CT,IT-RM">
+  <meta name="geo.placename" content="Barcelona, Rome">
+  <meta name="geo.position" content="41.3851;2.1734,41.9028;12.4964">
+  <meta name="ICBM" content="41.3851, 2.1734, 41.9028, 12.4964">
   <meta name="distribution" content="global">
   <meta name="rating" content="general">
   <meta name="revisit-after" content="7 days">
@@ -63,21 +63,36 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "RoomRadar",
-    "description": "AI-powered room finder for students in Barcelona. Find reliable student accommodation with smart filtering and trust ratings.",
+    "description": "AI-powered room finder for students in Barcelona and Rome. Find reliable student accommodation with smart filtering and trust ratings. Choose your city and get personalized results.",
     "url": "https://roomradar.app",
     "logo": "https://roomradar.app/assets/logo.svg",
     "image": "https://roomradar.app/assets/logo.svg",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Barcelona",
-      "addressRegion": "Catalonia",
-      "addressCountry": "ES"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 41.3851,
-      "longitude": 2.1734
-    },
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "addressLocality": "Barcelona",
+        "addressRegion": "Catalonia",
+        "addressCountry": "ES"
+      },
+      {
+        "@type": "PostalAddress",
+        "addressLocality": "Rome",
+        "addressRegion": "Lazio",
+        "addressCountry": "IT"
+      }
+    ],
+    "geo": [
+      {
+        "@type": "GeoCoordinates",
+        "latitude": 41.3851,
+        "longitude": 2.1734
+      },
+      {
+        "@type": "GeoCoordinates",
+        "latitude": 41.9028,
+        "longitude": 12.4964
+      }
+    ],
     "telephone": "+34-XXX-XXX-XXX",
     "email": "hello@roomradar.app",
     "priceRange": "€€",
@@ -94,8 +109,16 @@
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Student Room Search",
+            "name": "Student Room Search Barcelona",
             "description": "AI-powered room search for students in Barcelona"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Student Room Search Rome",
+            "description": "AI-powered room search for students in Rome"
           }
         }
       ]
@@ -118,15 +141,22 @@
     "name": "RoomRadar",
     "url": "https://roomradar.app",
     "logo": "https://roomradar.app/assets/logo.svg",
-    "description": "AI-powered platform helping students find reliable room listings in Barcelona",
+    "description": "AI-powered platform helping students find reliable room listings in Barcelona and Rome. Choose your city and get personalized accommodation search results.",
     "foundingDate": "2024",
-    "areaServed": {
-      "@type": "City",
-      "name": "Barcelona",
-      "addressCountry": "ES"
-    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Barcelona",
+        "addressCountry": "ES"
+      },
+      {
+        "@type": "City",
+        "name": "Rome",
+        "addressCountry": "IT"
+      }
+    ],
     "serviceType": "Student Accommodation Search",
-    "keywords": "student housing, Barcelona, room rental, AI search, accommodation finder"
+    "keywords": "student housing, Barcelona, Rome, room rental, AI search, accommodation finder, city selection"
   }
   </script>
   
@@ -229,9 +259,9 @@
       </div>
     </div>
     <div class="container">
-      <h1>Find Your Student Room in Barcelona with RoomRadar</h1>
-      <p class="subheadline">AI compares listings from Facebook groups and housing portals, rates them for trust, and shows you the best options.</p>
-      <a href="#beta-signup" class="cta-button" aria-label="Join RoomRadar beta program for student room search">
+      <h1>Find Your Student Room with RoomRadar</h1>
+      <p class="subheadline">Choose your city and let AI compare listings from Facebook groups and housing portals, rate them for trust, and show you the best options.</p>
+      <a href="#beta-signup" class="cta-button" aria-label="Join RoomRadar beta program for student room search in Barcelona or Rome">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/>
           <path d="M18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z"/>
@@ -246,7 +276,7 @@
     <div class="container">
       <div class="text-center mb-12">
         <h2 id="how-it-works-heading">How RoomRadar Works</h2>
-        <p class="text-large">Three simple steps to find your perfect room</p>
+        <p class="text-large">Three simple steps to find your perfect room in your chosen city</p>
       </div>
       
       <div class="grid grid-3" role="list">
@@ -257,8 +287,8 @@
               <circle cx="12" cy="7" r="4"/>
             </svg>
           </div>
-          <h3>1. Tell Us Your Needs</h3>
-          <p>Set your budget, preferred areas, and housing preferences. Our AI learns what matters most to you.</p>
+          <h3>1. Choose Your City & Set Preferences</h3>
+          <p>Select Barcelona or Rome, then set your budget, preferred areas, and housing preferences. Our AI learns what matters most to you.</p>
         </article>
         
         <article class="card fade-in" role="listitem">
@@ -268,8 +298,8 @@
               <path d="M18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z"/>
             </svg>
           </div>
-          <h3>2. AI Analyzes Posts</h3>
-          <p>Our AI scans Facebook groups and housing portals, filtering out scams and rating posts for reliability.</p>
+          <h3>2. AI Analyzes City-Specific Posts</h3>
+          <p>Our AI scans Facebook groups and housing portals in your chosen city, filtering out scams and rating posts for reliability.</p>
         </article>
         
         <article class="card fade-in" role="listitem">
@@ -278,8 +308,8 @@
               <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
             </svg>
           </div>
-          <h3>3. Get Rated Results</h3>
-          <p>Receive a clean, organized list of the best options with trust ratings and detailed insights.</p>
+          <h3>3. Get Rated Results for Your City</h3>
+          <p>Receive a clean, organized list of the best options in your chosen city with trust ratings and detailed insights.</p>
         </article>
       </div>
     </div>
@@ -303,7 +333,7 @@
         </div>
         
         <h2 class="beta-title">Join the Beta</h2>
-        <p class="beta-subtitle">We're opening access to 50 students first. Sign up and help shape the future of student housing search.</p>
+        <p class="beta-subtitle">We're opening access to 50 students first. Sign up and help shape the future of student housing search in Barcelona and Rome.</p>
         
         <div class="beta-benefits">
           <div class="beta-benefit">
@@ -351,7 +381,7 @@
     <div class="container">
       <div class="text-center mb-12">
         <h2>Why Students Choose RoomRadar</h2>
-        <p class="text-large">Built specifically for the challenges of finding student housing in Barcelona</p>
+        <p class="text-large">Built specifically for the challenges of finding student housing in Barcelona and Rome</p>
       </div>
       
       <div class="grid grid-2" style="gap: 4rem; align-items: center;">
@@ -365,7 +395,7 @@
             </div>
             <h3 style="margin-bottom: 0;">Save Hours of Searching</h3>
           </div>
-          <p>No more endless scrolling through Facebook groups or checking multiple websites. Get all the best options in one place.</p>
+          <p>No more endless scrolling through Facebook groups or checking multiple websites. Get all the best options in your chosen city in one place.</p>
         </div>
         
         <div class="slide-in-right">
@@ -378,7 +408,7 @@
             </div>
             <h3 style="margin-bottom: 0;">Reliable Trust Ratings</h3>
           </div>
-          <p>Our AI analyzes post quality, landlord history, and content clarity to help you avoid scams and find legitimate offers.</p>
+          <p>Our AI analyzes post quality, landlord history, and content clarity to help you avoid scams and find legitimate offers in your city.</p>
         </div>
         
         <div class="slide-in-left">
@@ -393,7 +423,7 @@
             </div>
             <h3 style="margin-bottom: 0;">Built for Students</h3>
           </div>
-          <p>Designed with student budgets, preferences, and Barcelona's unique housing market in mind.</p>
+          <p>Designed with student budgets, preferences, and the unique housing markets of Barcelona and Rome in mind.</p>
         </div>
         
         <div class="slide-in-right">
@@ -405,7 +435,7 @@
             </div>
             <h3 style="margin-bottom: 0;">Real-Time Updates</h3>
           </div>
-          <p>Get notified about new listings that match your criteria as soon as they're posted online.</p>
+          <p>Get notified about new listings that match your criteria in your chosen city as soon as they're posted online.</p>
         </div>
       </div>
     </div>
@@ -416,7 +446,7 @@
     <div class="container">
       <div class="text-center mb-12">
         <h2 id="testimonials-heading">What Beta Users Say</h2>
-        <p class="text-large">Early feedback from Barcelona students</p>
+        <p class="text-large">Early feedback from Barcelona and Rome students</p>
       </div>
       
       <div class="grid grid-3" role="list">
@@ -428,7 +458,7 @@
           "itemReviewed": {
             "@type": "Service",
             "name": "RoomRadar Student Room Search",
-            "description": "AI-powered room finder for students in Barcelona"
+            "description": "AI-powered room finder for students in Barcelona and Rome"
           },
           "reviewRating": {
             "@type": "Rating",
@@ -470,7 +500,7 @@
               <div style="font-weight: 600; color: #1f2937;" itemprop="author" itemscope itemtype="https://schema.org/Person">
                 <span itemprop="name">Maria S.</span>
               </div>
-              <div style="font-size: 0.875rem; color: #6b7280;">Exchange Student, UPF</div>
+              <div style="font-size: 0.875rem; color: #6b7280;">Exchange Student, UPF Barcelona</div>
             </div>
           </div>
           <meta itemprop="reviewRating" content="5" />
@@ -504,7 +534,7 @@
               <div style="font-weight: 600; color: #1f2937;" itemprop="author" itemscope itemtype="https://schema.org/Person">
                 <span itemprop="name">Alex K.</span>
               </div>
-              <div style="font-size: 0.875rem; color: #6b7280;">Master's Student, UB</div>
+              <div style="font-size: 0.875rem; color: #6b7280;">Master's Student, UB Barcelona</div>
             </div>
           </div>
           <meta itemprop="reviewRating" content="5" />
@@ -538,7 +568,7 @@
               <div style="font-weight: 600; color: #1f2937;" itemprop="author" itemscope itemtype="https://schema.org/Person">
                 <span itemprop="name">Sofia R.</span>
               </div>
-              <div style="font-size: 0.875rem; color: #6b7280;">PhD Student, UPC</div>
+              <div style="font-size: 0.875rem; color: #6b7280;">PhD Student, Sapienza Rome</div>
             </div>
           </div>
           <meta itemprop="reviewRating" content="5" />
